@@ -1,28 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../../components/Input";
+import Select from "../../components/Select";
 import Button from "../../components/Button";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import routeApi from "../../env";
 
 const Signup = () => {
   const [Usuário, setUsuário] = useState("");
   const [UsuárioConf, setUsuárioConf] = useState("");
+  const [permissao, setPermissao] = useState();
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const { signup } = useAuth();
-
   const handleSignup = () => {
-    if (!Usuário | !UsuárioConf | !senha) {
+    if (!Usuário || !UsuárioConf || !senha) {
       setError("Preencha todos os campos");
       return;
-    } else if (Usuário !== UsuárioConf) {
+    } 
+    else if (Usuário !== UsuárioConf) {
       setError("Os Usuários não são iguais");
       return;
     }
 
+    /*
     const res = signup(Usuário, senha);
 
     if (res) {
@@ -31,8 +34,26 @@ const Signup = () => {
     }
 
     alert("Usuário cadatrado com sucesso!");
-    navigate("/");
+    navigate("/"); 
+    */
   };
+
+  useEffect(() =>{
+    const getPermission= async () => {
+      const response = await fetch(routeApi+'/permissao', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'},
+      })
+
+      if (response.ok) {
+        const data = response.json();
+        setPermissao(data);
+        console.log(permissao)
+      }
+    }
+
+    getPermission()
+  }, []);
 
   return (
     <C.Container>
