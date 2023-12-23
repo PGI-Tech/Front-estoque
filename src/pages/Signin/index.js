@@ -42,8 +42,12 @@ const Signin = () => {
           console.log('Cadastro realizado com sucesso!');
           navigate("/home");
         }
+        else {
+          alert('Erro ao tentar logar!')
+        }
       } 
       catch (error) {
+        alert.error('Erro ao fazer login:', error);
         console.error('Erro ao fazer login:', error);
       }
     }

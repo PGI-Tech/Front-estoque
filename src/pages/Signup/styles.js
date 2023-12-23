@@ -18,6 +18,7 @@ export const Content = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  max-height: auto;
   box-shadow: 0 1px 2px #0003;
   background-color: white;
   max-width: 320px;
