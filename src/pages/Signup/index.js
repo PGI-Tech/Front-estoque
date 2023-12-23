@@ -8,52 +8,35 @@ import useAuth from "../../hooks/useAuth";
 import routeApi from "../../env";
 
 const Signup = () => {
-  const [Usuário, setUsuário] = useState("");
-  const [UsuárioConf, setUsuárioConf] = useState("");
-  const [permissao, setPermissao] = useState();
+  const [usuario, setUsuario] = useState("");
+  const [usuarioConf, setUsuarioConf] = useState("");
+  const [permissao, setPermissao] = useState(3);
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSignup = () => {
-    if (!Usuário || !UsuárioConf || !senha) {
+  const handleSignup = async () => {
+    if (!usuario || !usuarioConf || !permissao || !senha) {
       setError("Preencha todos os campos");
       return;
     } 
-    else if (Usuário !== UsuárioConf) {
+    else if (usuario !== usuarioConf) {
       setError("Os Usuários não são iguais");
       return;
-    }
-
-    /*
-    const res = signup(Usuário, senha);
-
-    if (res) {
-      setError(res);
-      return;
-    }
-
-    alert("Usuário cadatrado com sucesso!");
-    navigate("/"); 
-    */
-  };
-
-  useEffect(() =>{
-    const getPermission= async () => {
-      const response = await fetch(routeApi+'/permissao', {
-        method: 'GET',
+    } 
+    else {
+      const response = await fetch(routeApi+'/usuarios', {
+        method: 'POST',
         headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ username: usuario, senha: senha, id_permissao:permissao })
       })
-
-      if (response.ok) {
-        const data = response.json();
-        setPermissao(data);
-        console.log(permissao)
-      }
-    }
-
-    getPermission()
-  }, []);
+      
+      if(response.ok) {
+        alert('Usuário cadastrado com sucesso!')
+        navigate("/");
+      };
+    };
+  };
 
   return (
     <C.Container>
@@ -63,14 +46,14 @@ const Signup = () => {
         <Input
           type="Usuário"
           placeholder="Digite seu Usuário"
-          value={Usuário}
-          onChange={(e) => [setUsuário(e.target.value), setError("")]}
+          value={usuario}
+          onChange={(e) => [setUsuario(e.target.value), setError("")]}
         />
         <Input
           type="Usuário"
           placeholder="Confirme seu Usuário"
-          value={UsuárioConf}
-          onChange={(e) => [setUsuárioConf(e.target.value), setError("")]}
+          value={usuarioConf}
+          onChange={(e) => [setUsuarioConf(e.target.value), setError("")]}
         />
         <Input
           type="password"
