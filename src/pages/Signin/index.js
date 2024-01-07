@@ -71,7 +71,6 @@ const Signin = () => {
       <C.Label>ACESSE SUA CONTA</C.Label>
 
         <Input
-        
           type="usuário"
           placeholder="Digite seu Usuário"
           value={usuário}
