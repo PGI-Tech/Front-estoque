@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as C from "./styles"
+import Sidebar from "../../components/Sidebar"
 
 
 const Classe = () => {
@@ -15,9 +16,14 @@ const Classe = () => {
 
     return (
         <C.div>
+            <div>
+                <Sidebar></Sidebar>
+            </div>
             <C.content>
-                <label>Cadastre a sua classe</label>
+                <C.h2>Classe</C.h2>
+                
                 <C.input
+                placeholder="Cadastre a sua classe"
                     type="Cadastre a sua classe"
                     value={classe}
                     onChange={(e) => setClasse(e.target.value)}>

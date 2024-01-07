@@ -58,7 +58,9 @@ const Sidebar = () => {
 
           {showSubItems['analytics'] && (
             <>
-              <SubItem>Classe</SubItem>
+              <SubItem>
+                <SidebarLink href="/classe">Classe</SidebarLink>
+              </SubItem>
               <SubItem>Categoria</SubItem>
               <SubItem>Máquina de Agulha</SubItem>
               <SubItem>Espécie de Agulha</SubItem>
