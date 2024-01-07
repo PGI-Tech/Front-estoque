@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import Sidebar from "../../components/Sidebar";
 
+const Home = () => {
 
-const TabelaProdutos = ({ produtos }) => {
-    
-  return (
-   
-
-    <table class="">
-   
-      
-</table>
-
+  return(
+    <div>
+      <div><Sidebar></Sidebar></div>
+      <div></div>
+    </div>
   );
 };
 
-export default TabelaProdutos;
+export default Home;
