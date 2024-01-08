@@ -49,7 +49,10 @@ const Sidebar = () => {
       <SidebarWrapper>
         <h2>Empresa</h2>
       
-        
+        <SidebarItem>
+            <SidebarLink href="/home">Home</SidebarLink>
+          </SidebarItem>
+
         <SidebarItem>
           <SidebarLink onClick={() => handleToggleSubItems('analytics')}>
             Cadastro
