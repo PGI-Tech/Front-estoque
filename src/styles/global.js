@@ -1,19 +1,3 @@
-import { createGlobalStyle } from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    width: 100vw;
-    height: 100vh;
-    background-color: #f0f2f5;
-    font-family: Arial, Helvetica, sans-serif
-  }
-`;
-
-export default GlobalStyle;
+version https://git-lfs.github.com/spec/v1
+oid sha256:65b8cb5a8e828cf20fa69f2f97be1bc77f93fe3fa9b019aefe4c5668ab9e78d0
+size 344

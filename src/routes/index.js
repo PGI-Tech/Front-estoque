@@ -1,31 +1,3 @@
-import { Fragment } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
-import Home from "../pages/Home";
-import Signin from "../pages/Signin";
-import Signup from "../pages/Signup";
-import Classe from "../pages/Classe";
-
-const Private = ({ Item }) => {
-  const { signed } = useAuth();
-
-  return signed > 0 ? <Item /> : <Signin />;
-};
-
-const RoutesApp = () => {
-  return (
-    <BrowserRouter>
-      <Fragment>
-        <Routes>
-          <Route exact path="/home" element={<Home />} />
-          <Route path="/" element={<Signin />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route path="*" element={<Signin />} />
-          <Route exact path="/classe" element={<Classe />} />
-        </Routes>
-      </Fragment>
-    </BrowserRouter>
-  );
-};
-
-export default RoutesApp;
+version https://git-lfs.github.com/spec/v1
+oid sha256:b01fb6b7944fa2c5bcffb3fa64f8a602f55794d879983d1f6699b9008ba16707
+size 898
