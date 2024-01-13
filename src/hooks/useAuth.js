@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d4b2e8c729d556a5de972e9ff2a3864014d8cf813041372a0270d820c808ff9
-size 209
+import { useContext } from "react";
+import { AuthContext } from "../contexts/auth";
+
+const useAuth = () => {
+  const context = useContext(AuthContext);
+
+  return context;
+};
+
+export default useAuth;

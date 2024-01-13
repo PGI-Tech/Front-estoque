@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b36ecd7cb2f8432506f511ff7a4f0247e11c7da6a55690ab489552f349e8d1f6
-size 243
+import React from "react";
+import * as C from "./styles";
+
+const Button = ({ Text, onClick, Type = "button" }) => {
+  return (
+    <C.Button type={Type} onClick={onClick}>
+      {Text}
+    </C.Button>
+  );
+};
+
+export default Button;
