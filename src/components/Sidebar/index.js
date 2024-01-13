@@ -49,7 +49,10 @@ const Sidebar = () => {
       <SidebarWrapper>
         <h2>Empresa</h2>
       
-        
+        <SidebarItem>
+            <SidebarLink href="/home">Home</SidebarLink>
+          </SidebarItem>
+
         <SidebarItem>
           <SidebarLink onClick={() => handleToggleSubItems('analytics')}>
             Cadastro
@@ -58,7 +61,9 @@ const Sidebar = () => {
 
           {showSubItems['analytics'] && (
             <>
-              <SubItem>Classe</SubItem>
+              <SubItem>
+                <SidebarLink href="/classe">Classe</SidebarLink>
+              </SubItem>
               <SubItem>Categoria</SubItem>
               <SubItem>Máquina de Agulha</SubItem>
               <SubItem>Espécie de Agulha</SubItem>
