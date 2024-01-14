@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:32d87bec3c0616fe19ca53a365d54ec976e094888d96aa85ef56b06c40d413bd
-size 43
+// TableStyles.js
+import styled from 'styled-components';
+
+export const StyledTableContainer = styled.div`
+  display: flex;
+  width: 100%;
+  margin: auto;
+  flex-direction: column;
+`;
+
+export const StyledTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  table-layout: auto; /* Adiciona esta propriedade para ajuste automático de colunas */
+`;
+
+export const StyledTableHeaderRow = styled.tr`
+  border-bottom: 3px solid #ccc;
+`;
+
+export const StyledTableHeaderCell = styled.th`
+  padding: 10px 0;
+  text-align: left;
+`;
+
+export const StyledTableRow = styled.tr`
+  border-bottom: 2px solid #ddd;
+`;
+
+export const StyledTableCell = styled.td`
+  padding: 10px 0;
+`;
+
+// Adicione mais estilos conforme necessário
