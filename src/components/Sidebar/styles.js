@@ -9,7 +9,6 @@ export const SidebarWrapper = styled.div`
   color: white;
   padding: 20px;
   h2 {
-    margin-top: 1em;
     margin-bottom: 2em;
   }
 `;
@@ -19,7 +18,8 @@ export const SidebarItem = styled.div`
 `;
 
 export const SidebarLink = styled.a`
-  display: block;
+  display: flex;
+  align-itens: center;
   color: white;
   text-decoration: none;
   padding: 10px 0;
@@ -37,6 +37,8 @@ export const SubItem = styled.div`
   font-size: 14px;
 `;
 
-export const imgSidebar = styled.img`
-  
+export const Image = styled.img`
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
 `;

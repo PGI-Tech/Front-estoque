@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { SidebarWrapper, SidebarLink, SidebarItem, SubItem, imgSidebar } from './styles';
-import cadastroImagem from '/images/cadastro.png'
+import { SidebarWrapper, SidebarLink, SidebarItem, SubItem, Image } from './styles';
 
 const Sidebar = () => {
   const [showSubItems, setShowSubItems] = useState({});
@@ -18,12 +17,15 @@ const Sidebar = () => {
         <h2>Empresa</h2>
       
         <SidebarItem>
-            <SidebarLink href="/home">Home</SidebarLink>
+            <SidebarLink href="/home">
+              <Image src='/images/home.png'></Image>
+              Home
+            </SidebarLink>
         </SidebarItem>
 
         <SidebarItem>
           <SidebarLink onClick={() => handleToggleSubItems('analytics')}>
-            <img src={cadastroImagem} alt='cadastro'/>
+            <Image src='/images/cadastro.png'></Image>
             Cadastro
           </SidebarLink>
         
@@ -50,25 +52,41 @@ const Sidebar = () => {
       
     
         <SidebarItem>
-          <SidebarLink href="/">Elástico</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/elastico.png'></Image>
+            Elástico
+          </SidebarLink>
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">Agulha</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/agulha.png'></Image>
+            Agulha
+          </SidebarLink>
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">Linha</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/linhas.png'></Image>
+            Linha
+          </SidebarLink>
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">Tecido</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/tecido.png'></Image>
+            Tecido
+          </SidebarLink>
         </SidebarItem>
         <SidebarItem>
           <SidebarLink onClick={() => handleToggleSubItems('settings')}>
+            <Image src='/images/config.png'></Image>
             Settings
           </SidebarLink>
         
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">Logout</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/logout.png'></Image>
+            Logout
+          </SidebarLink>
         </SidebarItem>
       </SidebarWrapper>
     </div>
