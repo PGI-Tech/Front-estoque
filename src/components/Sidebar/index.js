@@ -1,38 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-
-const SidebarWrapper = styled.div`
-  width: 250px;
-  height: 100vh;
-  max-height : 100vh;
-  overflow-y:  auto;
-  background-color: #00202d;
-  color: white;
-  padding: 20px;
-`;
-
-const SidebarItem = styled.div`
-  margin-bottom: 10px;
-`;
-
-const SidebarLink = styled.a`
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 10px 0;
-  font-size: 16px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #555;
-  }
-`;
-
-const SubItem = styled.div`
-  margin-left: 20px;
-  padding: 8px 0;
-  font-size: 14px;
-`;
+import { SidebarWrapper, SidebarLink, SidebarItem, SubItem, imgSidebar } from './styles';
+import cadastroImagem from '/images/cadastro.png'
 
 const Sidebar = () => {
   const [showSubItems, setShowSubItems] = useState({});
@@ -51,10 +19,11 @@ const Sidebar = () => {
       
         <SidebarItem>
             <SidebarLink href="/home">Home</SidebarLink>
-          </SidebarItem>
+        </SidebarItem>
 
         <SidebarItem>
           <SidebarLink onClick={() => handleToggleSubItems('analytics')}>
+            <img src={cadastroImagem} alt='cadastro'/>
             Cadastro
           </SidebarLink>
         
