@@ -32,23 +32,43 @@ const Sidebar = () => {
 
           {showSubItems['analytics'] && (
             <>
+            <div>  
               <SubItem>
                 <SidebarSubLink href="/classe">Classe</SidebarSubLink>
               </SubItem>
               <SubItem>
                 <SidebarSubLink href="">Categoria</SidebarSubLink>
               </SubItem>
-              <SubItem>Categoria</SubItem>
-              <SubItem>Máquina de Agulha</SubItem>
-              <SubItem>Espécie de Agulha</SubItem>
-              <SubItem>Marca de Agulha</SubItem>
-              <SubItem>Unidade</SubItem>
-              <SubItem>Permissão</SubItem>
-              <SubItem>Tipo de Elástico</SubItem>
-              <SubItem>Composição</SubItem>
-              <SubItem>Marca de Elástico</SubItem>
-              <SubItem>Tipo de Linha</SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Máquina de Agulha</SidebarSubLink>
+              </SubItem>
               
+              <SubItem>
+                <SidebarSubLink href="">Espécie de Agulha</SidebarSubLink>
+                </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Marca de Agulha</SidebarSubLink>
+              </SubItem>
+              <SubItem> 
+                <SidebarSubLink href="">Unidade</SidebarSubLink>
+                </SubItem>
+              <SubItem> 
+                <SidebarSubLink href="">Permissão</SidebarSubLink>
+                </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Tipo de Elástico</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Composição</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Marca Elástico</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Tipo de Linha</SidebarSubLink>
+              </SubItem>
+              </div>
+            
             </>
           )}
         </SidebarItem>

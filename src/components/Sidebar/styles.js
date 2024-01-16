@@ -27,7 +27,6 @@ export const SidebarSubLink = styled.a`
   padding: 10px 0;
   font-size: 16px;
   cursor: pointer;
-  
 
 
 `;
@@ -36,7 +35,6 @@ export const SidebarLink = styled.a`
   align-itens: center;
   color: white;
   text-decoration: none;
-  padding: 10px 0;
   font-size: 16px;
   cursor: pointer;
   
@@ -48,10 +46,16 @@ export const SidebarLink = styled.a`
 `;
 
 export const SubItem = styled.div`
-  margin-left: 20px;
-  padding: 8px 0;
-  font-size: 14px;
- 
+display: flex;
+padding-left: 10px;
+align-itens: center;
+color: white;
+text-decoration: none;
+background-color: #001821;
+font-size: 16px;
+cursor: pointer;
+
+
 `;
 
 export const Image = styled.img`
