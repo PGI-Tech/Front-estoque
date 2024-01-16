@@ -1,38 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-
-const SidebarWrapper = styled.div`
-  width: 250px;
-  height: 100vh;
-  max-height : 100vh;
-  overflow-y:  auto;
-  background-color: #00202d;
-  color: white;
-  padding: 20px;
-`;
-
-const SidebarItem = styled.div`
-  margin-bottom: 10px;
-`;
-
-const SidebarLink = styled.a`
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 10px 0;
-  font-size: 16px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #555;
-  }
-`;
-
-const SubItem = styled.div`
-  margin-left: 20px;
-  padding: 8px 0;
-  font-size: 14px;
-`;
+import { SidebarWrapper, SidebarLink, SidebarSubLink, SidebarItem, SubItem, Image } from './styles';
 
 const Sidebar = () => {
   const [showSubItems, setShowSubItems] = useState({});
@@ -49,16 +16,28 @@ const Sidebar = () => {
       <SidebarWrapper>
         <h2>Empresa</h2>
       
-        
+        <SidebarItem>
+            <SidebarLink href="/home">
+              <Image src='/images/home.png'></Image>
+              Home
+            </SidebarLink>
+        </SidebarItem>
+
         <SidebarItem>
           <SidebarLink onClick={() => handleToggleSubItems('analytics')}>
+            <Image src='/images/cadastro.png'></Image>
             Cadastro
           </SidebarLink>
         
 
           {showSubItems['analytics'] && (
             <>
-              <SubItem>Classe</SubItem>
+              <SubItem>
+                <SidebarSubLink href="/classe">Classe</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+                <SidebarSubLink href="">Categoria</SidebarSubLink>
+              </SubItem>
               <SubItem>Categoria</SubItem>
               <SubItem>Máquina de Agulha</SubItem>
               <SubItem>Espécie de Agulha</SubItem>
@@ -76,25 +55,41 @@ const Sidebar = () => {
       
     
         <SidebarItem>
-          <SidebarLink href="/">Elástico</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/elastico.png'></Image>
+            Elástico
+          </SidebarLink>
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">Agulha</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/agulha.png'></Image>
+            Agulha
+          </SidebarLink>
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">Linha</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/linhas.png'></Image>
+            Linha
+          </SidebarLink>
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">Tecido</SidebarLink>
+          <SidebarLink href="/">
+            <Image src='/images/tecido.png'></Image>
+            Tecido
+          </SidebarLink>
         </SidebarItem>
         <SidebarItem>
           <SidebarLink onClick={() => handleToggleSubItems('settings')}>
+            <Image src='/images/config.png'></Image>
             Settings
           </SidebarLink>
         
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">Logout</SidebarLink>
+          <SidebarSubLink href="/">
+            <Image src='/images/logout.png'></Image>
+            Logout
+          </SidebarSubLink>
         </SidebarItem>
       </SidebarWrapper>
     </div>
