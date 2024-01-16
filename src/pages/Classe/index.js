@@ -1,27 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as C from "./styles";
 import Sidebar from "../../components/Sidebar";
 import Table from '../../components/Table';
+import routeApi from "../../env";
+import cookie from 'cookie';
 
 const Classe = () => {
   const [classe, setClasse] = useState('');
-  const [tableData, setTableData] = useState([
-    ['John Doe', 'Descrição 1', 'Código 1'],
-    ['Jane Smith', 'Descrição 2', 'Código 2'],
-    // Adicione mais dados conforme necessário
-  ]);
+  const [tableData, setTableData] = useState([]);
 
   const colunas = ['Nome', 'Descrição', 'Código'];
 
-  const onSave = () => {
-    console.log(`Classe: ${classe}`);
-    // Aqui você pode adicionar a lógica para salvar os dados na tabela
-    setTableData([...tableData, [classe, 'Descrição', 'Código']]);
+  const getTokenFromCookies = () => {
+    const token = cookie.parse(document.cookie.token);
+    return token
+  };
+
+  const handleData = async () => {
+    const response = await fetch(routeApi+'/classe', {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json',
+                'authorization':`Bearer ${getTokenFromCookies()}`},
+    })
+    
+    if(response.ok) {
+      const data = JSON.stringify(response);
+      setTableData(data);
+      console.log(data);
+    };
+  };
+
+  const onSave = async () => {
+    if (!classe) {
+      alert("Preencha todos os campos");
+      return;
+    } 
+    else {
+      const response = await fetch(routeApi+'/classe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json',
+                  'authorization':`Bearer ${getTokenFromCookies()}`},
+        body: JSON.stringify({ 
+          classe: classe 
+        })
+      })
+      
+      if(response.ok) {
+        
+      };
+    };
   };
 
   const onCancel = () => {
     setClasse('');
   };
+
+  useEffect(() => {
+  handleData()
+  }, []);
 
   return (
     <C.div>
