@@ -10,13 +10,27 @@ export const SidebarWrapper = styled.div`
   padding: 20px;
   h2 {
     margin-bottom: 2em;
-  }
+  };
+  
 `;
 
 export const SidebarItem = styled.div`
   margin-bottom: 10px;
+  
 `;
 
+export const SidebarSubLink = styled.a`
+  display: flex;
+  align-itens: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  
+
+
+`;
 export const SidebarLink = styled.a`
   display: flex;
   align-itens: center;
@@ -25,16 +39,19 @@ export const SidebarLink = styled.a`
   padding: 10px 0;
   font-size: 16px;
   cursor: pointer;
-
+  
   &:hover {
-    background-color: #555;
+    
+    font-weight: bold;
   }
+
 `;
 
 export const SubItem = styled.div`
   margin-left: 20px;
   padding: 8px 0;
   font-size: 14px;
+ 
 `;
 
 export const Image = styled.img`

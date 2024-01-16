@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SidebarWrapper, SidebarLink, SidebarItem, SubItem, Image } from './styles';
+import { SidebarWrapper, SidebarLink, SidebarSubLink, SidebarItem, SubItem, Image } from './styles';
 
 const Sidebar = () => {
   const [showSubItems, setShowSubItems] = useState({});
@@ -33,7 +33,10 @@ const Sidebar = () => {
           {showSubItems['analytics'] && (
             <>
               <SubItem>
-                <SidebarLink href="/classe">Classe</SidebarLink>
+                <SidebarSubLink href="/classe">Classe</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+                <SidebarSubLink href="">Categoria</SidebarSubLink>
               </SubItem>
               <SubItem>Categoria</SubItem>
               <SubItem>Máquina de Agulha</SubItem>
@@ -83,10 +86,10 @@ const Sidebar = () => {
         
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink href="/">
+          <SidebarSubLink href="/">
             <Image src='/images/logout.png'></Image>
             Logout
-          </SidebarLink>
+          </SidebarSubLink>
         </SidebarItem>
       </SidebarWrapper>
     </div>
