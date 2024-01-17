@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
 import Classe from "../pages/Classe";
+import CadastroClasse from "../pages/Classe/cadastro";
 
 const Private = ({ Item }) => {
   const { signed } = useAuth();
@@ -22,6 +23,7 @@ const RoutesApp = () => {
           <Route exact path="/signup" element={<Signup />} />
           <Route path="*" element={<Signin />} />
           <Route exact path="/classe" element={<Classe />} />
+          <Route exact path="/classe/cadastro" element={<CadastroClasse />} />
         </Routes>
       </Fragment>
     </BrowserRouter>
