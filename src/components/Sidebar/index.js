@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SidebarWrapper, SidebarLink, SidebarSubLink, SidebarItem, SubItem, Image } from './styles';
+import { SidebarWrapper, SidebarLink, SidebarSubLink, SidebarItem, SubItem, Image, DivSubMenu } from './styles';
 
 const Sidebar = () => {
   const [showSubItems, setShowSubItems] = useState({});
@@ -32,7 +32,7 @@ const Sidebar = () => {
 
           {showSubItems['analytics'] && (
             <>
-            <div>  
+            <DivSubMenu>  
               <SubItem>
                 <SidebarSubLink href="/classe">Classe</SidebarSubLink>
               </SubItem>
@@ -67,19 +67,18 @@ const Sidebar = () => {
               <SubItem>
               <SidebarSubLink href="">Tipo de Linha</SidebarSubLink>
               </SubItem>
-              </div>
+            </DivSubMenu>
             
             </>
           )}
         </SidebarItem>
-      
-    
         <SidebarItem>
-          <SidebarLink href="/">
-            <Image src='/images/elastico.png'></Image>
-            Elástico
-          </SidebarLink>
+            <SidebarLink href="/">
+              <Image src='/images/elastico.png'></Image>
+              Elástico
+            </SidebarLink>
         </SidebarItem>
+      
         <SidebarItem>
           <SidebarLink href="/">
             <Image src='/images/agulha.png'></Image>
@@ -103,13 +102,12 @@ const Sidebar = () => {
             <Image src='/images/config.png'></Image>
             Settings
           </SidebarLink>
-        
         </SidebarItem>
         <SidebarItem>
-          <SidebarSubLink href="/">
+          <SidebarLink href="/">
             <Image src='/images/logout.png'></Image>
             Logout
-          </SidebarSubLink>
+          </SidebarLink>
         </SidebarItem>
       </SidebarWrapper>
     </div>
