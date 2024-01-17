@@ -84,4 +84,5 @@ export const h2 = styled.h2`
   display: flex;
   font-weight: 500;
   font-size: 42px;
+  margin-bottom: 1em;
 `;

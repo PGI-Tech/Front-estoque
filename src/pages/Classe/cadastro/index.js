@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import * as C from "./styles";
-import Sidebar from "../../components/Sidebar";
-import Table from '../../components/Table';
-import routeApi from "../../env";
-import Button from '../../components/Button';
+import * as C from "../styles";
+import Sidebar from "../../../components/Sidebar";
+import ButtonConfirm from '../../../components/ButtonConfirm';
+import ButtonCancel from '../../../components/ButtonCancel';
+import ButtonBack from '../../../components/ButtonBack';
+import routeApi from "../../../env";
+import cookie from 'cookie';
 
-const Classe = () => {
+const CadastroClasse = () => {
   const [classe, setClasse] = useState('');
   const [tableData, setTableData] = useState([]);
   const [colunas, setColunas] = useState([]);
@@ -62,7 +64,7 @@ const Classe = () => {
       
       if(response.ok) {
         alert('Classe criada com sucesso!')
-        window.location.reload()
+        window.location.href = '/classe'
       };
     };
   };
@@ -81,22 +83,22 @@ const Classe = () => {
         <Sidebar />
       </div>
       <C.content>
-        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        <C.h2>Classe</C.h2>  
-        <Button Text={'Nova Classe'} onClick={() => {window.location.href = '/classe/cadastro';}}></Button>
-        </div>
-        <Table
-          showIndex={true}
-          data={tableData} 
-          Text="Título da Tabela"
-          columnMapping={{
-            classe: 'Classe',
-            id_classe: 'ID'
-          }}
-        ></Table>
+        <C.h2>Cadastro de Classe</C.h2>
+
+        <C.input
+          placeholder="Cadastre a sua classe"
+          type="Cadastre a sua classe"
+          value={classe}
+          onChange={(e) => setClasse(e.target.value)}
+        ></C.input>
+        <C.divBtn>
+          <ButtonConfirm Text={'Salvar'} onClick={onSave}></ButtonConfirm>
+          <ButtonCancel Text={'Cancelar'} onClick={onCancel}>Cancelar</ButtonCancel>
+          <ButtonBack Text={'Voltar'} onClick={() => {window.location.href = '/classe'}}>Cancelar</ButtonBack>
+        </C.divBtn>
       </C.content>
     </C.div>
   );
 };
 
-export default Classe;
+export default CadastroClasse;
