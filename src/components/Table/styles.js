@@ -1,4 +1,3 @@
-// TableStyles.js
 import styled from 'styled-components';
 
 export const StyledTableContainer = styled.div`
@@ -26,10 +25,13 @@ export const StyledTableHeaderCell = styled.th`
 
 export const StyledTableRow = styled.tr`
   border-bottom: 2px solid #ddd;
+
+  &.even-row {
+    background-color: #f5f5f5; /* ou qualquer outra cor de cinza claro desejada */
+  }
 `;
 
 export const StyledTableCell = styled.td`
   padding: 10px 0;
 `;
-
-// Adicione mais estilos conforme necessário
+  

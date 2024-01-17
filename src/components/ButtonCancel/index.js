@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:182f83ab489cfa4258628f2ea20e1bb8e02a802e7ea53ac99ab5a82d1144af77
-size 267
+import React from "react";
+import * as C from "./styles";
+
+const ButtonCancel = ({ Text, onClick, Type = "button" }) => {
+  return (
+    <C.ButtonCancel Text={Text} type={Type} onClick={onClick}>
+      {Text}
+    </C.ButtonCancel>
+  );
+};
+
+export default ButtonCancel;

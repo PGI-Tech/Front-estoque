@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SidebarWrapper, SidebarLink, SidebarItem, SubItem, Image } from './styles';
+import { SidebarWrapper, SidebarLink, SidebarSubLink, SidebarItem, SubItem, Image, DivSubMenu } from './styles';
 
 const Sidebar = () => {
   const [showSubItems, setShowSubItems] = useState({});
@@ -32,31 +32,53 @@ const Sidebar = () => {
 
           {showSubItems['analytics'] && (
             <>
+            <DivSubMenu>  
               <SubItem>
-                <SidebarLink href="/classe">Classe</SidebarLink>
+                <SidebarSubLink href="/classe">Classe</SidebarSubLink>
               </SubItem>
-              <SubItem>Categoria</SubItem>
-              <SubItem>Máquina de Agulha</SubItem>
-              <SubItem>Espécie de Agulha</SubItem>
-              <SubItem>Marca de Agulha</SubItem>
-              <SubItem>Unidade</SubItem>
-              <SubItem>Permissão</SubItem>
-              <SubItem>Tipo de Elástico</SubItem>
-              <SubItem>Composição</SubItem>
-              <SubItem>Marca de Elástico</SubItem>
-              <SubItem>Tipo de Linha</SubItem>
+              <SubItem>
+                <SidebarSubLink href="">Categoria</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Máquina de Agulha</SidebarSubLink>
+              </SubItem>
               
+              <SubItem>
+                <SidebarSubLink href="">Espécie de Agulha</SidebarSubLink>
+                </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Marca de Agulha</SidebarSubLink>
+              </SubItem>
+              <SubItem> 
+                <SidebarSubLink href="">Unidade</SidebarSubLink>
+                </SubItem>
+              <SubItem> 
+                <SidebarSubLink href="">Permissão</SidebarSubLink>
+                </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Tipo de Elástico</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Composição</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Marca Elástico</SidebarSubLink>
+              </SubItem>
+              <SubItem>
+              <SidebarSubLink href="">Tipo de Linha</SidebarSubLink>
+              </SubItem>
+            </DivSubMenu>
+            
             </>
           )}
         </SidebarItem>
-      
-    
         <SidebarItem>
-          <SidebarLink href="/">
-            <Image src='/images/elastico.png'></Image>
-            Elástico
-          </SidebarLink>
+            <SidebarLink href="/">
+              <Image src='/images/elastico.png'></Image>
+              Elástico
+            </SidebarLink>
         </SidebarItem>
+      
         <SidebarItem>
           <SidebarLink href="/">
             <Image src='/images/agulha.png'></Image>
@@ -80,7 +102,6 @@ const Sidebar = () => {
             <Image src='/images/config.png'></Image>
             Settings
           </SidebarLink>
-        
         </SidebarItem>
         <SidebarItem>
           <SidebarLink href="/">

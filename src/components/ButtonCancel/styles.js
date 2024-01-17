@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4e2f7108299e374ba9d3537ae913da9fda793e75d620ba8f9552382aa7d72af
-size 569
+import styled from "styled-components";
+
+export const ButtonCancel = styled.button`
+  height: 40px;
+  width: auto;
+  margin: 1em;
+  color: #00202d;
+  font-weight: 600;
+  padding: 10px 2em;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: transparent;
+  border: 2px solid #00202d;
+  border-radius: 100px;
+  transition: all 300ms ease;
+  &:hover {
+      background-color: transparent;
+      border: 2px solid red;
+      color: red;
+  }
+`;
