@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7fce52a24ec1ce0bff346f90af5272d7c46e5c3ad8e6aeb79f8d56e554e78072
-size 566
+import styled from "styled-components";
+
+export const ButtonBack = styled.button`
+  height: 40px;
+  width: auto;
+  margin: 1em;
+  color: #00202d;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: transparent;
+  border-radius: 100px;
+  transition: all 300ms ease;
+  &:hover {
+      padding: none;
+      font-size: 18px;
+  }
+`;
