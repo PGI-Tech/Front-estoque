@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import * as C from "../styles";
-import Sidebar from "../../../components/Sidebar";
-import ButtonConfirm from '../../../components/ButtonConfirm';
-import ButtonCancel from '../../../components/ButtonCancel';
-import ButtonBack from '../../../components/ButtonBack';
-import routeApi from "../../../env";
-import cookie from 'cookie';
+import { useParams } from "react-router-dom";
+import Sidebar from "../../../../components/Sidebar";
+import ButtonConfirm from '../../../../components/ButtonConfirm';
+import ButtonCancel from '../../../../components/ButtonCancel';
+import ButtonBack from '../../../../components/ButtonBack';
+import routeApi from "../../../../env";
 
-const CadastroClasse = () => {
-  const [classe, setClasse] = useState('');
+const CadastroCategoria = () => {
+  const { id } = useParams();
+  const [categoria, setCategoria] = useState('');
   const [tableData, setTableData] = useState([]);
   const [colunas, setColunas] = useState([]);
 
@@ -26,7 +27,7 @@ const CadastroClasse = () => {
 
   const handleData = async () => {
     try {
-      const response = await fetch(routeApi + '/classe', {
+      const response = await fetch(routeApi + '/categoria/'+id, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -38,7 +39,8 @@ const CadastroClasse = () => {
         const data = await response.json(); // Converte o corpo da resposta para JSON
         setTableData(data);
         console.log(data);
-        setColunas(Object.keys(data[0]))
+        setColunas(Object.keys(data[0]));
+        setCategoria(data[1]);
       } else {
         console.error('Erro na solicitação:', response.status, response.statusText);
       }
@@ -48,34 +50,36 @@ const CadastroClasse = () => {
   };
 
   const onSave = async () => {
-    if (!classe) {
+    if (!categoria) {
       alert("Preencha todos os campos");
       return;
     } 
     else {
-      const response = await fetch(routeApi+'/classe', {
+      const response = await fetch(routeApi+'/categoria', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
                   'authorization':`Bearer ${getTokenFromCookies()}`},
         body: JSON.stringify({ 
-          classe: classe 
+          categoria: categoria 
         })
       })
       
       if(response.ok) {
-        alert('Classe criada com sucesso!')
-        window.location.href = '/classe'
+        alert('Categoria criada com sucesso!')
+        window.location.href = '/cadastros/categoria'
       };
     };
   };
 
   const onCancel = () => {
-    setClasse('');
+    setCategoria('');
   };
 
   useEffect(() => {
-  handleData();
-  }, []);
+    if (id){
+      handleData();
+    };
+  }, [id]);
 
   return (
     <C.div>
@@ -83,22 +87,22 @@ const CadastroClasse = () => {
         <Sidebar />
       </div>
       <C.content>
-        <C.h2>Cadastro de Classe</C.h2>
+        <C.h2>Cadastro de Categoria</C.h2>
 
         <C.input
-          placeholder="Cadastre a sua classe"
-          type="Cadastre a sua classe"
-          value={classe}
-          onChange={(e) => setClasse(e.target.value)}
+          placeholder="Cadastre a sua Categoria"
+          type="Cadastre a sua Categoria"
+          value={categoria}
+          onChange={(e) => setCategoria(e.target.value)}
         ></C.input>
         <C.divBtn>
           <ButtonConfirm Text={'Salvar'} onClick={onSave}></ButtonConfirm>
-          <ButtonCancel Text={'Cancelar'} onClick={onCancel}>Cancelar</ButtonCancel>
-          <ButtonBack Text={'Voltar'} onClick={() => {window.location.href = '/classe'}}>Cancelar</ButtonBack>
+          <ButtonCancel Text={'Cancelar'} onClick={onCancel}></ButtonCancel>
+          <ButtonBack Text={'Voltar'} onClick={() => {window.location.href = '/cadastros/categoria'}}>Cancelar</ButtonBack>
         </C.divBtn>
       </C.content>
     </C.div>
   );
 };
 
-export default CadastroClasse;
+export default CadastroCategoria;

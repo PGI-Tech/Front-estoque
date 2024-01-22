@@ -8,14 +8,15 @@ export const SidebarWrapper = styled.div`
   background-color: #00202d;
   color: white;
   padding: 20px;
+
   h2 {
     margin-bottom: 2em;
-  };
-  
+  }
 `;
 
 export const SidebarItem = styled.div`
   margin-bottom: 10px;
+  text-align: left; /* Align the content to the left */
 `;
 
 export const SidebarSubLink = styled.a`
@@ -26,19 +27,23 @@ export const SidebarSubLink = styled.a`
   padding: 10px 0;
   font-size: 16px;
   cursor: pointer;
+  transition: all 300ms ease;
 
   &:hover {
     color: white;
   }
 `;
+
 export const SidebarLink = styled.a`
   display: flex;
-  align-itens: center;
-  padding-bottom: 10px;
+  align-items: center; /* Fix the typo in align-items property */
+  padding-bottom: 1em;
   color: white;
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
+  transition: all 200ms ease;
+  text-align: left; /* Align the content to the left */
 
   &:hover {
     font-weight: bold;
@@ -46,16 +51,13 @@ export const SidebarLink = styled.a`
 `;
 
 export const SubItem = styled.div`
-display: flex;
-padding-left: 10px;
-align-itens: center;
-color: white;
-text-decoration: none;
-
-font-size: 16px;
-cursor: pointer;
-
-
+  display: flex;
+  padding-left: 10px;
+  align-items: center; /* Fix the typo in align-items property */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
 `;
 
 export const Image = styled.img`

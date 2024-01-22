@@ -37,8 +37,6 @@ const Signin = () => {
             path: '/', // Caminho do cookie
             sameSite: 'strict' // Restringe o cookie a solicitações do mesmo site
           })
-          
-          alert('Logado com sucesso');
           console.log('Cadastro realizado com sucesso!');
           navigate("/home");
         }
