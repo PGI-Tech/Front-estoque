@@ -4,7 +4,6 @@ import Sidebar from "../../../../components/Sidebar";
 import ButtonConfirm from '../../../../components/ButtonConfirm';
 import ButtonCancel from '../../../../components/ButtonCancel';
 import ButtonBack from '../../../../components/ButtonBack';
-import routeApi from "../../../../env";
 
 const CadastroEspecieAgulha = () => {
   const [especieAgulha, setEspecieAgulha] = useState('');
@@ -25,7 +24,7 @@ const CadastroEspecieAgulha = () => {
 
   const handleData = async () => {
     try {
-      const response = await fetch(routeApi + '/especie_agulha', {
+      const response = await fetch(process.env.REACT_APP_API_URL + '/especie_agulha', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +51,7 @@ const CadastroEspecieAgulha = () => {
       return;
     } 
     else {
-      const response = await fetch(routeApi+'/especie_agulha', {
+      const response = await fetch(process.env.REACT_APP_API_URL+'/especie_agulha', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
                   'authorization':`Bearer ${getTokenFromCookies()}`},

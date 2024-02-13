@@ -4,7 +4,6 @@ import Sidebar from "../../../../components/Sidebar";
 import ButtonConfirm from '../../../../components/ButtonConfirm';
 import ButtonCancel from '../../../../components/ButtonCancel';
 import ButtonBack from '../../../../components/ButtonBack';
-import routeApi from "../../../../env";
 
 const CadastroClasse = () => {
   const [classe, setClasse] = useState('');
@@ -25,7 +24,7 @@ const CadastroClasse = () => {
 
   const handleData = async () => {
     try {
-      const response = await fetch(routeApi + '/classe', {
+      const response = await fetch(process.env.REACT_APP_API_URL + '/classe', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +51,7 @@ const CadastroClasse = () => {
       return;
     } 
     else {
-      const response = await fetch(routeApi+'/classe', {
+      const response = await fetch(process.env.REACT_APP_API_URL+'/classe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
                   'authorization':`Bearer ${getTokenFromCookies()}`},

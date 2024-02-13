@@ -5,7 +5,6 @@ import Sidebar from "../../../../components/Sidebar";
 import ButtonConfirm from '../../../../components/ButtonConfirm';
 import ButtonCancel from '../../../../components/ButtonCancel';
 import ButtonBack from '../../../../components/ButtonBack';
-import routeApi from "../../../../env";
 
 const CadastroCategoria = () => {
   const { id } = useParams();
@@ -27,7 +26,7 @@ const CadastroCategoria = () => {
 
   const handleData = async () => {
     try {
-      const response = await fetch(routeApi + '/categoria/'+id, {
+      const response = await fetch(process.env.REACT_APP_API_URL + '/categoria/'+id, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +54,7 @@ const CadastroCategoria = () => {
       return;
     } 
     else {
-      const response = await fetch(routeApi+'/categoria', {
+      const response = await fetch(process.env.REACT_APP_API_URL+'/categoria', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
                   'authorization':`Bearer ${getTokenFromCookies()}`},

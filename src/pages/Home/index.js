@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as C from "./styles";
 import Sidebar from "../../components/Sidebar";
-import Table from '../../components/Table';
-import routeApi from "../../env";
 import TableProdutos from "../../components/TableProdutos";
 
 
@@ -57,7 +55,7 @@ const finalColumnMapping = { ...columnMapping, ...filteredAdditionalColumnMappin
 
     const handleData = async () => {
       try {
-        const response = await fetch(routeApi + '/produtos/'+page, {
+        const response = await fetch(process.env.REACT_APP_API_URL + '/produtos/'+page, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

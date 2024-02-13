@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import * as C from "./styles";
 import Sidebar from "../../../components/Sidebar";
 import Table from '../../../components/Table';
-import routeApi from "../../../env";
 import Button from '../../../components/Button';
 
 const EspecieAgulha = () => {
@@ -24,7 +23,7 @@ const EspecieAgulha = () => {
 
   const handleData = async () => {
     try {
-      const response = await fetch(routeApi + '/especie_agulha', {
+      const response = await fetch(process.env.REACT_APP_API_URL + '/especie_agulha', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

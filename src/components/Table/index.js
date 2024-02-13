@@ -1,6 +1,5 @@
 // Table.js
 import React from 'react';
-import routeApi from "../../env";
 import {
   StyledTableContainer,
   StyledTable,
@@ -43,7 +42,7 @@ const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
       const id = Number(rowData[idField]);
       console.log(`Id da linha: ${id}`)
 
-      const response = await fetch(`${routeApi}/${deleteRoute}/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/${deleteRoute}/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

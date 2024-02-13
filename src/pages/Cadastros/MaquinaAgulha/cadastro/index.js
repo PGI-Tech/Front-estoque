@@ -4,7 +4,6 @@ import Sidebar from "../../../../components/Sidebar";
 import ButtonConfirm from '../../../../components/ButtonConfirm';
 import ButtonCancel from '../../../../components/ButtonCancel';
 import ButtonBack from '../../../../components/ButtonBack';
-import routeApi from "../../../../env";
 
 const CadastroMaquinaAgulha = () => {
   const [maquinaAgulha, setMaquinaAgulha] = useState('');
@@ -29,7 +28,7 @@ const CadastroMaquinaAgulha = () => {
       return;
     } 
     else {
-      const response = await fetch(routeApi+'/maquina_agulha', {
+      const response = await fetch(process.env.REACT_APP_API_URL+'/maquina_agulha', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
                   'authorization':`Bearer ${getTokenFromCookies()}`},

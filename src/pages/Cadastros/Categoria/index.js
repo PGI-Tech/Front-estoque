@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import * as C from "./styles";
 import Sidebar from "../../../components/Sidebar";
 import Table from '../../../components/Table';
-import routeApi from "../../../env";
 import Button from '../../../components/Button';
 
 const Categoria = () => {
@@ -24,7 +23,7 @@ const Categoria = () => {
 
   const handleData = async () => {
     try {
-      const response = await fetch(routeApi + '/categoria', {
+      const response = await fetch(process.env.REACT_APP_API_URL + '/categoria', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
