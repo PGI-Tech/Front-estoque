@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+//import { useNavigate } from "react-router-dom";
+import cookie from 'cookie';
 import { SidebarWrapper, SidebarLink, SidebarSubLink, SidebarItem, SubItem, Image, DivSubMenu } from './styles';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [showSubItems, setShowSubItems] = useState({});
 
@@ -11,6 +14,18 @@ const Sidebar = () => {
       ...prev,
       [item]: !prev[item],
     }));
+  };
+
+  const handleLogout = () => {
+    // Exclui o cookie
+    document.cookie = cookie.serialize('token', '', {
+      maxAge: -1, // Define a idade máxima como -1 para excluir o cookie
+      path: '/',
+      sameSite: 'strict'
+    });
+
+    // Redireciona para a página de login
+    navigate("/signin");
   };
 
   const isCurrentPath = (prefix) => location.pathname.startsWith(prefix);
@@ -108,7 +123,7 @@ const Sidebar = () => {
           </SidebarLink>
         </SidebarItem>
         <SidebarItem>
-          <SidebarLink style={{ color: isCurrentPath('/logout') ? 'white' : 'gray' }} href="/">
+          <SidebarLink style={{ color: isCurrentPath('/logout') ? 'white' : 'gray' }} onClick={() => handleLogout()}>
             <Image src='/images/logout.png'></Image>
             Logout
           </SidebarLink>

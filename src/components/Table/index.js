@@ -77,7 +77,7 @@ const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
         <StyledTable>
           <thead>
             <StyledTableHeaderRow>
-              {showIndex && <StyledTableHeaderCell>Índice</StyledTableHeaderCell>}
+              {showIndex && <StyledTableHeaderCell></StyledTableHeaderCell>}
               {colunasRenderizadas.map((coluna, index) => (
                 <StyledTableHeaderCell key={index}>{coluna}</StyledTableHeaderCell>
               ))}

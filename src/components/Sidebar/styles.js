@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const SidebarWrapper = styled.div`
-  width: 250px;
+  width: 300px;
   height: 100vh;
   max-height : 100vh;
   overflow-y:  auto;
   background-color: #00202d;
   color: white;
-  padding: 20px;
+  padding: 20px 3em;
 
   h2 {
     margin-bottom: 2em;
