@@ -14,6 +14,7 @@ const columnMapping = {
   id_categoria: 'Cód. Categoria',
   id_classe: 'Cód. Classe',
   id_unidade: 'Cód. Unidade',
+  tipo:'Produto',
   valor: 'Valor (R$)',
   imposto: 'Imposto (%)',
   preco_final: 'Preço Final (R$)',

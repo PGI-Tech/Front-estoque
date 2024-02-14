@@ -37,6 +37,11 @@ export const StyledTableRow = styled.tr`
   }
 `;
 
+export const StyledTableHeaderCellIndex = styled.td`
+  width: 50px;
+  padding: 10px 0;
+`;
+
 export const StyledTableCell = styled.td`
   width: 150px;
   padding: 10px 0;
