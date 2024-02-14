@@ -5,6 +5,7 @@ import {
   StyledTable,
   StyledTableHeaderRow,
   StyledTableHeaderCell,
+  StyledTableHeaderCellIndex,
   StyledTableRow,
   StyledTableCell,
   StyledTableCellRed,
@@ -31,7 +32,7 @@ const TableProdutos = ({ data, title, columnMapping, showIndex  }) => {
         <StyledTable>
           <thead>
           <StyledTableHeaderRow>
-            {showIndex && <StyledTableHeaderCell></StyledTableHeaderCell>}
+            {showIndex && <StyledTableHeaderCellIndex></StyledTableHeaderCellIndex>}
             {colunasRenderizadas.map((coluna, index) => (
               <StyledTableHeaderCell key={index}>{coluna}</StyledTableHeaderCell>
             ))}
