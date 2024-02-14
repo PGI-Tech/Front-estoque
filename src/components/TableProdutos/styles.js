@@ -5,6 +5,11 @@ export const StyledTableContainer = styled.div`
   width: 100%;
   margin: auto;
   flex-direction: column;
+  overflow-x: auto; /* Ativa o scroll horizontal por padrão */
+
+  @media (min-width: 5000px) {
+    overflow-x: auto;
+  }
 `;
 
 export const StyledTable = styled.table`
@@ -19,6 +24,7 @@ export const StyledTableHeaderRow = styled.tr`
 `;
 
 export const StyledTableHeaderCell = styled.th`
+  min-width: 150px;
   padding: 10px 0;
   text-align: left;
 `;
@@ -32,7 +38,13 @@ export const StyledTableRow = styled.tr`
 `;
 
 export const StyledTableCell = styled.td`
+  width: 150px;
   padding: 10px 0;
+`;
+
+export const StyledTableCellRed = styled.td`
+  padding: 10px 0;
+  color: red;
 `;
   
 export const DeleteLink = styled.td`
@@ -51,6 +63,7 @@ a {
 `;
 
 export const EditLink = styled.td`
+  padding-right: 20px; 
   a {
     cursor: pointer;
     color: #000000;

@@ -4,7 +4,6 @@ import Button from "../../components/Button";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import routeApi from "../../env";
 
 const Signup = () => {
   const [usuario, setUsuario] = useState("");
@@ -24,7 +23,7 @@ const Signup = () => {
       return;
     } 
     else {
-      const response = await fetch(routeApi+'/usuarios', {
+      const response = await fetch(process.env.REACT_APP_API_URL+'/usuarios', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ username: usuario, senha: senha, id_permissao:permissao })
