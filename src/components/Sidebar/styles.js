@@ -75,3 +75,18 @@ export const DivSubMenu = styled.div`
   background-color: #001821;
   border-radius: 10px;
 `;
+
+export const sidebarContainerStyle =styled.div `
+  display: 'flex',
+`;
+
+export const toggleButtonStyle = styled.div `
+  border-radius:'0 0 10px 0',
+  padding: '10px',
+  height: '80px',
+  background-color: '#00202d',
+  color: 'white',
+  border: 'none',
+  cursor: 'pointer',
+  font-size: '16px',
+`;
