@@ -86,9 +86,9 @@ const Signin = () => {
         <Button Text="Entrar" onClick={handleLogin} />
         <C.LabelSignup>
           Não tem uma conta?
-          <C.Strong>
+          {/* <C.Strong>
             <Link to="/signup">&nbsp;Registre-se</Link>
-          </C.Strong>
+          </C.Strong> */}
         </C.LabelSignup>
       </C.Content>
     </C.Container>
