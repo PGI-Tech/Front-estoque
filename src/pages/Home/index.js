@@ -92,7 +92,9 @@ const finalColumnMapping = { ...columnMapping, ...filteredAdditionalColumnMappin
   return(
     <C.div>
       <div>
-        <Sidebar />
+      	<div><Sidebar></Sidebar></div>
+      
+      	<div></div>
       </div>
       <C.content>
         <div style={{display: 'flex', justifyContent: 'space-between'}}>

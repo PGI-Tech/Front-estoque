@@ -14,6 +14,8 @@ export const SidebarWrapper = styled.div`
   }
 `;
 
+
+
 export const SidebarItem = styled.div`
   margin-bottom: 10px;
   text-align: left; /* Align the content to the left */
