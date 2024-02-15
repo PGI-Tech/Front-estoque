@@ -61,6 +61,10 @@ const Signin = () => {
     */
   };
 
+  const toAutorizar = () => {
+    navigate(process.env.REACT_APP_API_URL);
+  };
+
   return (
     <C.Container>
       
@@ -82,10 +86,7 @@ const Signin = () => {
         <C.labelError>{error}</C.labelError>
         <Button Text="Entrar" onClick={handleLogin} />
         <C.LabelSignup>
-          Não tem uma conta?
-          {/* <C.Strong>
-            <Link to="/signup">&nbsp;Registre-se</Link>
-          </C.Strong> */}
+          <a onClick={() => {toAutorizar}}>Autorizar</a>
         </C.LabelSignup>
       </C.Content>
     </C.Container>
