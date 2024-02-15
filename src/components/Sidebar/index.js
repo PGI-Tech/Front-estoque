@@ -98,6 +98,27 @@ const Sidebar = () => {
                 <SubItem>
                 <SidebarSubLink to="">Tipo de Linha</SidebarSubLink>
                 </SubItem>
+                <SubItem>
+                <SidebarSubLink to="">Embalagem</SidebarSubLink>
+                </SubItem>
+                <SubItem>
+                <SidebarSubLink to="">Tipo Móvel</SidebarSubLink>
+                </SubItem>
+                <SubItem>
+                <SidebarSubLink to="">Tipo Insumo</SidebarSubLink>
+                </SubItem>
+                <SubItem>
+                <SidebarSubLink to="">Tipo Máquina</SidebarSubLink>
+                </SubItem>
+                <SubItem>
+                <SidebarSubLink to="">Marca Móvel</SidebarSubLink>
+                </SubItem>
+                <SubItem>
+                <SidebarSubLink to="">Marca Insumo</SidebarSubLink>
+                </SubItem>
+                <SubItem>
+                <SidebarSubLink to="">Marca Máquina</SidebarSubLink>
+                </SubItem>
               </DivSubMenu>
               
               </>
