@@ -35,6 +35,10 @@ export const Label = styled.label`
 export const LabelSignup = styled.label`
   font-size: 16px;
   color: #676767;
+  a {
+    text-decoration: none;
+    color: #676767;
+  }
 `;
 
 export const labelError = styled.label`

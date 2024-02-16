@@ -74,4 +74,19 @@ export const DivSubMenu = styled.div`
   padding: 10px;
   background-color: #001821;
   border-radius: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+
+  ::-webkit-scrollbar {
+    width: 5px;  /* Largura da barra de rolagem */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #8a8a8a;  /* Cor do "ponteiro" da barra de rolagem */
+    border-radius: 5px;  /* Borda arredondada do "ponteiro" */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #001821;  /* Cor da área de fundo da barra de rolagem */
+  }
 `;

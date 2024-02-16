@@ -134,6 +134,24 @@ const Sidebar = () => {
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/tecido') ? 'white' : 'gray' }} href="/">
+                <Image src='/images/tecido.png'></Image>
+                Movel
+              </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/tecido') ? 'white' : 'gray' }} href="/">
+                <Image src='/images/tecido.png'></Image>
+                Máquinas
+              </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/tecido') ? 'white' : 'gray' }} href="/">
+                <Image src='/images/tecido.png'></Image>
+                Insumo
+              </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
               <SidebarLink style={{ color: isCurrentPath('/configuracao') ? 'white' : 'gray' }} onClick={() => handleToggleSubItems('settings')}>
                 <Image src='/images/config.png'></Image>
                 Configuração
@@ -160,7 +178,9 @@ const sidebarContainerStyle = {
 };
 
 const toggleButtonStyle = {
-  borderRadius:'0 0 10px 0',
+  paddingLeft: '18px',
+  margin: '10px',
+  borderRadius:'10px',
   padding: '10px',
   height: '80px',
   backgroundColor: '#00202d',
