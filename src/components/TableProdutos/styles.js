@@ -38,7 +38,7 @@ export const StyledTableRow = styled.tr`
 `;
 
 export const StyledTableHeaderCellIndex = styled.td`
-  width: 50px;
+  width: 150px;
   padding: 10px 0;
 `;
 

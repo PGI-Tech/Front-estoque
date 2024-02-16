@@ -32,7 +32,7 @@ const TableProdutos = ({ data, title, columnMapping, showIndex  }) => {
         <StyledTable>
           <thead>
           <StyledTableHeaderRow>
-            {showIndex && <StyledTableHeaderCellIndex></StyledTableHeaderCellIndex>}
+            {showIndex && <StyledTableHeaderCell></StyledTableHeaderCell>}
             {colunasRenderizadas.map((coluna, index) => (
               <StyledTableHeaderCell key={index}>{coluna}</StyledTableHeaderCell>
             ))}

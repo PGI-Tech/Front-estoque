@@ -152,12 +152,6 @@ const Sidebar = () => {
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
-              <SidebarLink style={{ color: isCurrentPath('/configuracao') ? 'white' : 'gray' }} onClick={() => handleToggleSubItems('settings')}>
-                <Image src='/images/config.png'></Image>
-                Configuração
-              </SidebarLink>
-            </SidebarItem>
-            <SidebarItem>
               <SidebarLink style={{ color: isCurrentPath('/logout') ? 'white' : 'gray' }} onClick={() => handleLogout()}>
                 <Image src='/images/logout.png'></Image>
                 Logout
@@ -178,7 +172,7 @@ const sidebarContainerStyle = {
 };
 
 const toggleButtonStyle = {
-  paddingLeft: '18px',
+  paddingLeft: '20px',
   margin: '10px',
   borderRadius:'10px',
   padding: '10px',
