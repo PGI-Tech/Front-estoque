@@ -7,12 +7,26 @@ import {
   StyledTableHeaderCell,
   StyledTableRow,
   StyledTableCell,
+  DeleteLink,
+  EditLink
 } from './styles';
 
-const Table = ({ data, title, columnMapping, showIndex }) => {
+const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
   if (!data || data.length === 0) {
     return <p>Nenhum dado disponível.</p>;
-  }
+  };
+
+  function getTokenFromCookies() {
+    const cookies = document.cookie.split('; ');
+    for (const cookie of cookies) {
+      const [name, value] = cookie.split('=');
+      if (name === 'token') {
+        console.log(`Token: ${value}`)
+        return value;
+      };
+    };
+    return null;
+  };
 
   const colunasOriginais = Object.keys(data[0]);
 
@@ -21,14 +35,48 @@ const Table = ({ data, title, columnMapping, showIndex }) => {
     .filter((coluna) => columnMapping[coluna] !== undefined)
     .map((coluna) => columnMapping[coluna]);
 
+  const onDelete = async (rowData) => {
+    try {
+      const idField = Object.keys(rowData).find((field) => field.startsWith('id'));
+
+      const id = Number(rowData[idField]);
+      console.log(`Id da linha: ${id}`)
+
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/${deleteRoute}/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'authorization': `Bearer ${getTokenFromCookies()}`
+        }
+      });
+
+      if (response.ok) {
+        console.log('Categoria excluída com sucesso!');
+        alert('Categoria excluída com sucesso!');
+        window.location.reload();
+      } else {
+        console.error('Erro ao excluir categoria:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Erro ao excluir categoria:', error.message);
+    }
+  };
+
+  const returnId = async (rowData) => {
+    const idField = Object.keys(rowData).find((field) => field.startsWith('id'));
+
+    const id = Number(rowData[idField]);
+    console.log(`Id da linha: ${id}`)
+    return id
+  };
+
   return (
     <div>
-      <h3>{title}</h3>
       <StyledTableContainer>
         <StyledTable>
           <thead>
             <StyledTableHeaderRow>
-              {showIndex && <StyledTableHeaderCell>Índice</StyledTableHeaderCell>}
+              {showIndex && <StyledTableHeaderCell></StyledTableHeaderCell>}
               {colunasRenderizadas.map((coluna, index) => (
                 <StyledTableHeaderCell key={index}>{coluna}</StyledTableHeaderCell>
               ))}
@@ -43,6 +91,15 @@ const Table = ({ data, title, columnMapping, showIndex }) => {
                   .map((colunaOriginal, cellIndex) => (
                     <StyledTableCell key={cellIndex}>{rowData[colunaOriginal]}</StyledTableCell>
                   ))}
+                  <EditLink>
+                    <a>Editar</a>
+                  </EditLink>
+
+                  
+                  <DeleteLink>
+                    <a onClick={() => onDelete(rowData)}>Excluir</a>
+                  </DeleteLink>
+                  
               </StyledTableRow>
             ))}
           </tbody>

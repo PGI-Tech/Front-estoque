@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import * as C from "../styles";
-import Sidebar from "../../../components/Sidebar";
-import ButtonConfirm from '../../../components/ButtonConfirm';
-import ButtonCancel from '../../../components/ButtonCancel';
-import ButtonBack from '../../../components/ButtonBack';
-import routeApi from "../../../env";
-import cookie from 'cookie';
+import Sidebar from "../../../../components/Sidebar";
+import ButtonConfirm from '../../../../components/ButtonConfirm';
+import ButtonCancel from '../../../../components/ButtonCancel';
+import ButtonBack from '../../../../components/ButtonBack';
 
 const CadastroClasse = () => {
   const [classe, setClasse] = useState('');
@@ -26,7 +24,7 @@ const CadastroClasse = () => {
 
   const handleData = async () => {
     try {
-      const response = await fetch(routeApi + '/classe', {
+      const response = await fetch(process.env.REACT_APP_API_URL + '/classe', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +51,7 @@ const CadastroClasse = () => {
       return;
     } 
     else {
-      const response = await fetch(routeApi+'/classe', {
+      const response = await fetch(process.env.REACT_APP_API_URL+'/classe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
                   'authorization':`Bearer ${getTokenFromCookies()}`},
@@ -64,7 +62,7 @@ const CadastroClasse = () => {
       
       if(response.ok) {
         alert('Classe criada com sucesso!')
-        window.location.href = '/classe'
+        window.location.href = 'cadastros/classe'
       };
     };
   };
@@ -94,7 +92,7 @@ const CadastroClasse = () => {
         <C.divBtn>
           <ButtonConfirm Text={'Salvar'} onClick={onSave}></ButtonConfirm>
           <ButtonCancel Text={'Cancelar'} onClick={onCancel}>Cancelar</ButtonCancel>
-          <ButtonBack Text={'Voltar'} onClick={() => {window.location.href = '/classe'}}>Cancelar</ButtonBack>
+          <ButtonBack Text={'Voltar'} onClick={() => {window.location.href = '/cadastros/classe'}}>Cancelar</ButtonBack>
         </C.divBtn>
       </C.content>
     </C.div>
