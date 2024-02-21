@@ -129,12 +129,6 @@ const Sidebar = () => {
                 </>
               )}
             </SidebarItem>
-            <SidebarItem>
-                <SidebarLink style={{ color: isCurrentPath('/elastico') ? 'white' : 'gray' }} href="/">
-                  <Image src='/images/elastico.png'></Image>
-                  Elástico
-                </SidebarLink>
-            </SidebarItem>
           
             <SidebarItem>
               <SidebarLink style={{ color: isCurrentPath('/agulha') ? 'white' : 'gray' }} href="/">
@@ -143,12 +137,36 @@ const Sidebar = () => {
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+                <SidebarLink style={{ color: isCurrentPath('/elastico') ? 'white' : 'gray' }} href="/">
+                  <Image src='/images/elastico.png'></Image>
+                  Elástico
+                </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
               <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
                 <Image src='/images/linhas.png'></Image>
-                Linha
+                Linhas
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
+                <Image src='/images/produção.png'></Image>
+                Insumo
+              </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
+                <Image src='/images/maquina.png'></Image>
+                Máquina
+              </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
+            <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/logout') ? 'white' : 'gray' }} onClick={() => handleLogout()}>
+                <Image src='/images/baú.png'></Image>
+                Móvel
+              </SidebarLink>
+            </SidebarItem>
               <SidebarLink style={{ color: isCurrentPath('/tecido') ? 'white' : 'gray' }} href="/">
                 <Image src='/images/tecido.png'></Image>
                 Tecido

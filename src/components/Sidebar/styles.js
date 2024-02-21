@@ -23,7 +23,7 @@ export const SidebarItem = styled.div`
 
 export const SidebarSubLink = styled.a`
   display: flex;
-  align-itens: center;
+  align-items: center;
   color: #8a8a8a;
   text-decoration: none;
   padding: 10px 0;
