@@ -48,17 +48,6 @@ const Signin = () => {
         console.error('Erro ao fazer login:', error);
       }
     }
-
-    /* 
-    const res = signin(usuário, senha);
-
-    if (res) {
-      setError(res);
-      return;
-    }
-
-    navigate("/home"); 
-    */
   };
 
   return (

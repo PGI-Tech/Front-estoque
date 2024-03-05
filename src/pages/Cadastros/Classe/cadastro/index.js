@@ -4,11 +4,13 @@ import Sidebar from "../../../../components/Sidebar";
 import ButtonConfirm from '../../../../components/ButtonConfirm';
 import ButtonCancel from '../../../../components/ButtonCancel';
 import ButtonBack from '../../../../components/ButtonBack';
+import { useParams } from 'react-router-dom';
 
 const CadastroClasse = () => {
   const [classe, setClasse] = useState('');
   const [tableData, setTableData] = useState([]);
   const [colunas, setColunas] = useState([]);
+  const { row } = useParams();
 
   function getTokenFromCookies() {
     const cookies = document.cookie.split('; ');
@@ -22,7 +24,7 @@ const CadastroClasse = () => {
     return null;
   };
 
-  const handleData = async () => {
+  const handleData = async (row) => {
     try {
       const response = await fetch(process.env.REACT_APP_API_URL + '/classe', {
         method: 'GET',
@@ -72,8 +74,10 @@ const CadastroClasse = () => {
   };
 
   useEffect(() => {
-  handleData();
-  }, []);
+    if(row){
+      handleData(row);
+    }
+  }, [row]);
 
   return (
     <C.div>

@@ -10,6 +10,7 @@ import {
   DeleteLink,
   EditLink
 } from './styles';
+import { Link } from 'react-router-dom';
 
 const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
   if (!data || data.length === 0) {
@@ -92,7 +93,9 @@ const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
                     <StyledTableCell key={cellIndex}>{rowData[colunaOriginal]}</StyledTableCell>
                   ))}
                   <EditLink>
-                    <a>Editar</a>
+                  <Link to={`/cadastros/classe/cadastro?id=${returnId(rowData)}`}>
+                    Editar
+                  </Link>
                   </EditLink>
 
                   

@@ -1,3 +1,4 @@
+// routes.js
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
@@ -32,16 +33,24 @@ const RoutesApp = () => {
             />
           }
         />
-        <Route path="/home" element={<Home />} />
-        <Route path="/cadastros/classe" element={<Classe />} />
-        <Route path="/cadastros/classe/cadastro" element={<CadastroClasse />} />
-        <Route path="/cadastros/categoria" element={<Categoria />} />
-        <Route path="/cadastros/categoria/cadastro" element={<CadastroCategoria />} />
-        <Route path="/cadastros/maquinaAgulha" element={<MaquinaAgulha />} />
-        <Route path="/cadastros/maquinaAgulha/cadastro" element={<CadastroMaquinaAgulha />} />
-        <Route path="/cadastros/especieAgulha" element={<EspecieAgulha />} />
-        <Route path="/cadastros/especieAgulha/cadastro" element={<CadastroEspecieAgulha />} />
-        {/* Add a catch-all route for unknown paths */}
+        {/* Wrap Middleware in an empty Route */}
+        <Route
+          path="/"
+          element={
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/cadastros/classe" element={<Classe />} />
+                <Route path="/cadastros/classe/cadastro" element={<CadastroClasse />} />
+                <Route path="/cadastros/categoria" element={<Categoria />} />
+                <Route path="/cadastros/categoria/cadastro" element={<CadastroCategoria />} />
+                <Route path="/cadastros/maquinaAgulha" element={<MaquinaAgulha />} />
+                <Route path="/cadastros/maquinaAgulha/cadastro" element={<CadastroMaquinaAgulha />} />
+                <Route path="/cadastros/especieAgulha" element={<EspecieAgulha />} />
+                <Route path="/cadastros/especieAgulha/cadastro" element={<CadastroEspecieAgulha />} />
+                {/* Add a catch-all route for unknown paths */}
+              </Routes>
+          }
+        />
         <Route path="*" element={<Signin />} />
       </Routes>
     </BrowserRouter>
