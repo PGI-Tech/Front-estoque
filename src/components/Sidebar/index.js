@@ -103,16 +103,31 @@ const Sidebar = () => {
                   <SubItem>
                   <SidebarSubLink href="">Tipo de Linha</SidebarSubLink>
                   </SubItem>
+                  <SubItem>
+                  <SidebarSubLink href="">Embalagem</SidebarSubLink>
+                  </SubItem>
+                  <SubItem>
+                  <SidebarSubLink href="">Tipo Móvel</SidebarSubLink>
+                  </SubItem>
+                  <SubItem>
+                  <SidebarSubLink href="">Tipo Insumo</SidebarSubLink>
+                  </SubItem>
+                  <SubItem>
+                  <SidebarSubLink href="">Tipo Máquina</SidebarSubLink>
+                  </SubItem>
+                  <SubItem>
+                  <SidebarSubLink href="">Marca Móvel</SidebarSubLink>
+                  </SubItem>
+                  <SubItem>
+                  <SidebarSubLink href="">Marca Insumo</SidebarSubLink>
+                  </SubItem>
+                  <SubItem>
+                  <SidebarSubLink href="">Marca Máquina</SidebarSubLink>
+                  </SubItem>
                 </DivSubMenu>
                 
                 </>
               )}
-            </SidebarItem>
-            <SidebarItem>
-                <SidebarLink style={{ color: isCurrentPath('/elastico') ? 'white' : 'gray' }} href="/">
-                  <Image src='/images/elastico.png'></Image>
-                  Elástico
-                </SidebarLink>
             </SidebarItem>
           
             <SidebarItem>
@@ -122,12 +137,36 @@ const Sidebar = () => {
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+                <SidebarLink style={{ color: isCurrentPath('/elastico') ? 'white' : 'gray' }} href="/">
+                  <Image src='/images/elastico.png'></Image>
+                  Elástico
+                </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
               <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
                 <Image src='/images/linhas.png'></Image>
-                Linha
+                Linhas
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
+                <Image src='/images/produção.png'></Image>
+                Insumo
+              </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
+                <Image src='/images/maquina.png'></Image>
+                Máquina
+              </SidebarLink>
+            </SidebarItem>
+            <SidebarItem>
+            <SidebarItem>
+              <SidebarLink style={{ color: isCurrentPath('/logout') ? 'white' : 'gray' }} onClick={() => handleLogout()}>
+                <Image src='/images/baú.png'></Image>
+                Móvel
+              </SidebarLink>
+            </SidebarItem>
               <SidebarLink style={{ color: isCurrentPath('/tecido') ? 'white' : 'gray' }} href="/">
                 <Image src='/images/tecido.png'></Image>
                 Tecido
@@ -182,6 +221,7 @@ const toggleButtonStyle = {
   border: 'none',
   cursor: 'pointer',
   fontSize: '16px',
+  zIndex: '0'
 };
 
 export default Sidebar;

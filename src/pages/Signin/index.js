@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import * as C from "./styles";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import cookie from 'cookie';
 
@@ -11,20 +11,27 @@ const Signin = () => {
   const { signin } = useAuth();
   const navigate = useNavigate();
 
-  const [usuário, setusuário] = useState("");
+  const [usuario, setusuário] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
-    if (!usuário || !senha) { // verifica se os campos não estão vazios
+    if (!usuario || !senha) { // verifica se os campos não estão vazios
       setError("Preencha todos os campos")
     } 
     else {
-      try {
-        const response = await fetch(process.env.REACT_APP_API_URL+'/auth', { // routeApi é a rota padrão da API
+      const json = JSON.stringify({
+        username: usuario, 
+        senha: senha
+      });
+
+      console.log(json);
+      
+      try { // ROUTE: Autenticação
+        const response = await fetch(process.env.REACT_APP_API_URL+'/auth', { // routeApi é a rota padrão da API 
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ username: usuário, senha: senha })
+            body: json
         })
 
         if (response.ok) {
@@ -59,7 +66,7 @@ const Signin = () => {
         <Input
           type="usuário"
           placeholder="Digite seu Usuário"
-          value={usuário}
+          value={usuario}
           onChange={(e) => [setusuário(e.target.value), setError("")]}
         />
         <Input
@@ -69,8 +76,7 @@ const Signin = () => {
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Entrar" onClick={handleLogin} />
-        <C.LabelSignup>
+        <Button Text="Entrar" onClick={handleLogin} /><C.LabelSignup>
           <a href={process.env.REACT_APP_API_URL}>Autorizar</a>
         </C.LabelSignup>
       </C.Content>
