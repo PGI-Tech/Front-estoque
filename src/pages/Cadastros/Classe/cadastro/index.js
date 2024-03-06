@@ -62,7 +62,7 @@ const CadastroClasse = () => {
       
       if(response.ok) {
         alert('Classe criada com sucesso!')
-        window.location.href = 'cadastros/classe'
+        window.location.href = '/cadastros/classe'
       };
     };
   };

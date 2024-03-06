@@ -207,6 +207,7 @@ const toggleButtonStyle = {
   border: 'none',
   cursor: 'pointer',
   fontSize: '16px',
+  zIndex: '0'
 };
 
 export default Sidebar;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const SidebarWrapper = styled.div`
   width: 300px;
   height: 100vh;
-  max-height : 100vh;
-  overflow-y:  auto;
+  max-height: 100vh;
+  overflow-y: auto;
   background-color: #00202d;
   color: white;
   padding: 20px 3em;
@@ -12,9 +12,28 @@ export const SidebarWrapper = styled.div`
   h2 {
     margin-bottom: 2em;
   }
+
+  /* Adiciona uma margem à direita para o contêiner de rolagem */
+  &::-webkit-scrollbar {
+    width: 5px; /* Largura da barra de rolagem */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #8a8a8a; /* Cor do "ponteiro" da barra de rolagem */
+    border-radius: 5px; /* Borda arredondada do "ponteiro" */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #001821; /* Cor da área de fundo da barra de rolagem */
+  }
 `;
 
-
+export const SidebarScrollbar = styled.div`
+  /* Adiciona a margem à direita para o contêiner de rolagem */
+  margin-right: 8px;
+  overflow-y: scroll;
+  max-height: 100%;
+`;
 
 export const SidebarItem = styled.div`
   margin-bottom: 10px;
@@ -38,7 +57,7 @@ export const SidebarSubLink = styled.a`
 
 export const SidebarLink = styled.a`
   display: flex;
-  align-items: center; /* Fix the typo in align-items property */
+  align-items: center;
   padding-bottom: 1em;
   color: white;
   text-decoration: none;
@@ -55,7 +74,7 @@ export const SidebarLink = styled.a`
 export const SubItem = styled.div`
   display: flex;
   padding-left: 10px;
-  align-items: center; /* Fix the typo in align-items property */
+  align-items: center;
   color: white;
   text-decoration: none;
   font-size: 16px;
@@ -74,4 +93,19 @@ export const DivSubMenu = styled.div`
   padding: 10px;
   background-color: #001821;
   border-radius: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px; /* Largura da barra de rolagem */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #8a8a8a; /* Cor do "ponteiro" da barra de rolagem */
+    border-radius: 5px; /* Borda arredondada do "ponteiro" */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #001821; /* Cor da área de fundo da barra de rolagem */
+  }
 `;

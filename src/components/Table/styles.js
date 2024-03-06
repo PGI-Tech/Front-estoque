@@ -20,11 +20,12 @@ export const StyledTableHeaderRow = styled.tr`
 
 export const StyledTableHeaderCell = styled.th`
   padding: 10px 0;
+  padding-left: 1em;
   text-align: left;
 `;
 
 export const StyledTableRow = styled.tr`
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
   color: #000000;
   &.even-row {
     background-color: #f5f5f5; /* ou qualquer outra cor de cinza claro desejada */
@@ -33,6 +34,7 @@ export const StyledTableRow = styled.tr`
 
 export const StyledTableCell = styled.td`
   padding: 10px 0;
+  padding-left: 1em;
 `;
   
 export const DeleteLink = styled.td`

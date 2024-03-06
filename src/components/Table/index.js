@@ -10,8 +10,9 @@ import {
   DeleteLink,
   EditLink
 } from './styles';
+import SelectionOption from '../Select';
 
-const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
+const Table = ({ data, title, columnMapping, deleteRoute  }) => {
   if (!data || data.length === 0) {
     return <p>Nenhum dado disponível.</p>;
   };
@@ -76,7 +77,6 @@ const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
         <StyledTable>
           <thead>
             <StyledTableHeaderRow>
-              {showIndex && <StyledTableHeaderCell></StyledTableHeaderCell>}
               {colunasRenderizadas.map((coluna, index) => (
                 <StyledTableHeaderCell key={index}>{coluna}</StyledTableHeaderCell>
               ))}
@@ -85,7 +85,6 @@ const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
           <tbody>
             {data.map((rowData, rowIndex) => (
               <StyledTableRow key={rowIndex} className={rowIndex % 2 === 1 ? 'even-row' : ''}>
-                {showIndex && <StyledTableCell>{rowIndex + 1}</StyledTableCell>}
                 {colunasOriginais
                   .filter((coluna) => columnMapping[coluna] !== undefined)
                   .map((colunaOriginal, cellIndex) => (
@@ -99,7 +98,7 @@ const Table = ({ data, title, columnMapping, showIndex, deleteRoute  }) => {
                   <DeleteLink>
                     <a onClick={() => onDelete(rowData)}>Excluir</a>
                   </DeleteLink>
-                  
+
               </StyledTableRow>
             ))}
           </tbody>
