@@ -37,6 +37,7 @@ export const SidebarScrollbar = styled.div`
 
 export const SidebarItem = styled.div`
   margin-bottom: 10px;
+  display: flex;
   text-align: left; /* Align the content to the left */
 `;
 
@@ -58,6 +59,7 @@ export const SidebarSubLink = styled.a`
 export const SidebarLink = styled.a`
   display: flex;
   align-items: center;
+  margin-left: 8px;
   padding-bottom: 1em;
   color: white;
   text-decoration: none;
@@ -65,7 +67,7 @@ export const SidebarLink = styled.a`
   cursor: pointer;
   transition: all 200ms ease;
   text-align: left; /* Align the content to the left */
-
+  padding-left: 10px
   &:hover {
     font-weight: bold;
   }

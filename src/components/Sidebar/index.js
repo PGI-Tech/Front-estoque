@@ -3,6 +3,22 @@ import { useLocation, useNavigate } from 'react-router-dom';
 //import { useNavigate } from "react-router-dom";
 import cookie from 'cookie';
 import { SidebarWrapper, SidebarLink, SidebarSubLink, SidebarItem, SubItem, Image, DivSubMenu } from './styles';
+// eslint-disable-next-line no-unused-vars
+
+import { IoMdHome } from "react-icons/io";
+import { FaRegEdit } from "react-icons/fa";
+import { TbNeedleThread } from "react-icons/tb";
+import { TbBrandElastic } from "react-icons/tb";
+import { GiSewingString } from "react-icons/gi";
+import { CiBoxes } from "react-icons/ci";
+import { GiSewingMachine } from "react-icons/gi";
+import { TbWashMachine } from "react-icons/tb";
+import { FaBoxTissue } from "react-icons/fa6";
+import { GrConfigure } from "react-icons/gr";
+import { MdOutlineLogout } from "react-icons/md";
+
+
+
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -53,15 +69,16 @@ const Sidebar = () => {
             <h2>Empresa</h2>
           
             <SidebarItem>
+              <IoMdHome size={25}/>
                 <SidebarLink style={{ color: isCurrentPath('/home') ? 'white' : 'gray' }} href="/home" >
-                  <Image src='/images/home.png'></Image>
                   Home
                 </SidebarLink>
             </SidebarItem>
 
             <SidebarItem>
+            <FaRegEdit size={22} />
               <SidebarLink style={{ color: isCurrentPath('/cadastros') ? 'white' : 'gray' }} onClick={() => handleToggleSubItems('analytics')}>
-                <Image src='/images/cadastro.png'></Image>
+               
                 Cadastro
               </SidebarLink>
             
@@ -131,56 +148,71 @@ const Sidebar = () => {
             </SidebarItem>
           
             <SidebarItem>
+            <TbNeedleThread size={25}/>
               <SidebarLink style={{ color: isCurrentPath('/agulha') ? 'white' : 'gray' }} href="/">
-                <Image src='/images/agulha.png'></Image>
+               
                 Agulha
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+            <TbBrandElastic  size={25} />
                 <SidebarLink style={{ color: isCurrentPath('/elastico') ? 'white' : 'gray' }} href="/">
-                  <Image src='/images/elastico.png'></Image>
+                 
                   Elástico
                 </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+            <GiSewingString size={25}/>
               <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
-                <Image src='/images/linhas.png'></Image>
+                
                 Linhas
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+            <CiBoxes  size={25}/>
               <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
-                <Image src='/images/produção.png'></Image>
+               
                 Insumo
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+            <GiSewingMachine  size={25}/>
               <SidebarLink style={{ color: isCurrentPath('/linha') ? 'white' : 'gray' }} href="/">
-                <Image src='/images/maquina.png'></Image>
+            
                 Máquina
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
-            <SidebarItem>
+            
+            
+            <TbWashMachine size={25} />
+
               <SidebarLink style={{ color: isCurrentPath('/logout') ? 'white' : 'gray' }} onClick={() => handleLogout()}>
-                <Image src='/images/baú.png'></Image>
+               
                 Móvel
               </SidebarLink>
             </SidebarItem>
+            <SidebarItem>
+            <FaBoxTissue size={25} />
+
               <SidebarLink style={{ color: isCurrentPath('/tecido') ? 'white' : 'gray' }} href="/">
-                <Image src='/images/tecido.png'></Image>
+         
                 Tecido
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+            <GrConfigure size={25}/>
+
               <SidebarLink style={{ color: isCurrentPath('/configuracao') ? 'white' : 'gray' }} onClick={() => handleToggleSubItems('settings')}>
-                <Image src='/images/config.png'></Image>
+            
                 Configuração
               </SidebarLink>
             </SidebarItem>
             <SidebarItem>
+            <MdOutlineLogout  size={25}/>
+
               <SidebarLink style={{ color: isCurrentPath('/logout') ? 'white' : 'gray' }} onClick={() => handleLogout()}>
-                <Image src='/images/logout.png'></Image>
+        
                 Logout
               </SidebarLink>
             </SidebarItem>
