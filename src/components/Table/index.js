@@ -10,7 +10,7 @@ import {
   DeleteLink,
   EditLink
 } from './styles';
-import SelectionOption from '../Select';
+//import SelectionOption from '../Select';
 
 const Table = ({ data, title, columnMapping, deleteRoute  }) => {
   if (!data || data.length === 0) {
