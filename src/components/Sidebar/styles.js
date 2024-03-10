@@ -36,14 +36,13 @@ export const SidebarScrollbar = styled.div`
 `;
 
 export const SidebarItem = styled.div`
-  margin-bottom: 10px;
-  display: flex;
+  margin-bottom: 2px;
+  padding: 5%;
   text-align: left; /* Align the content to the left */
 `;
 
 export const SidebarSubLink = styled.a`
-  display: flex;
-  align-items: center;
+
   color: #8a8a8a;
   text-decoration: none;
   padding: 10px 0;
@@ -56,18 +55,17 @@ export const SidebarSubLink = styled.a`
   }
 `;
 
+
 export const SidebarLink = styled.a`
-  display: flex;
-  align-items: center;
-  margin-left: 8px;
-  padding-bottom: 1em;
+  padding: 8%;
+  padding-bottom: 2em;
   color: white;
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
   transition: all 200ms ease;
   text-align: left; /* Align the content to the left */
-  padding-left: 10px
+
   &:hover {
     font-weight: bold;
   }
